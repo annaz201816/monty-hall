@@ -86,7 +86,7 @@ def result():
         return "An error occurred", 500
     
     
-# if __name__ == '__main__':
-#     app.run(debug=True)
-#     serve(app, host="0.0.0.0", port=80)
+if __name__ == '__main__':
+    app.run()
+    # serve(app, host="0.0.0.0", port=80)
 
