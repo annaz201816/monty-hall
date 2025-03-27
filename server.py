@@ -87,8 +87,13 @@ def result():
     
     
 if __name__ == '__main__':
-    # app.run(debug=True)
-    #serve(app, host="0.0.0.0", port=80)
+    # app.run(host='0.0.0.0', debug=True)
+    # serve(app, host="0.0.0.0", port=80, debug=True)
 
+    # for runinng locally
+    # app.run(debug=True)
+    # serve(app, host="0.0.0.0", port=80)
+
+    #for running on the web
     app.run(host="0.0.0.0", debug=True)
 
