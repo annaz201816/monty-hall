@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .border {
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.614);
+  } */
+
+main {
+  width: 100vw;
+  height: 100vw;
+  background-color: lavenderblush;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("/static/styles/squid_games.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(
+      0
+    ); /* Starts at the right edge, aligned with the edge of the screen */
+  }
+  to {
+    transform: translateX(
+      -100vw
+    ); /* Moves by the entire viewport width to the left */
+  }
+}
+
+.goat {
+  width: 240px;
+  position: fixed;
+  bottom: 0; /* Keeps it at the bottom */
+  right: 0; /* Start from the right edge of the screen */
+  animation: slide 10s linear infinite; /* Continuous loop, adjust duration as needed */
+  z-index: 1000; /* Ensures it is above other content */
+  filter: brightness(60%); /* Reduces brightness to 50% */
+}
+
+body {
+  font-family: sans-serif, "Times New Roman", Times, serif;
+  text-align: center;
+  padding-top: 50px;
+  background-color: black;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+}
+
+button {
+  /* margin: auto; */
+  margin-top: 30px;
+  padding: 100px 100px;
+  font-size: 60px; /* Increase the font size */
+  color: #fddcb4;
+  border: none; /* No border */
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.614);
+  cursor: pointer;
+}
+
+.result {
+  font-size: 2.5rem;
+  color: hsl(0, 100%, 97%);
+  text-shadow: black 2px 2px 2px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 100px;
+
+  /* Center the text in the middle of the screen */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

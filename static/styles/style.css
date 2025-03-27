@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .border {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.614);
+} */
+
+main {
+  width: 100vw;
+  height: 100vw;
+  background-color: lavenderblush;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("/static/styles/squid_games.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.hero_text {
+  color: rgba(169, 48, 48, 0.661);
+  height: 150px;
+  position: absolute;
+  top: 22%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  font-size: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
+  text-shadow: 10px 5px 20px rgba(0, 0, 0, 0.5);
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 0.1px;
+  white-space: nowrap;
+}
+
+.header {
+  font-size: 3rem; /* Increase the font size */
+  padding-top: 0px;
+  color: #ffebd2;
+  margin-top: 0;
+  /* margin-bottom: auto; */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 100px;
+  text-shadow: black 2px 2px 7px;
+}
+
+#choose {
+  font-size: 2.5rem;
+  color: #ffebd2;
+  text-shadow: black 2px 2px 7px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 100px;
+}
+
+.header,
+#choose {
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent text wrapping */
+  border-right: 2px solid #ffebd2; /* Simulate a typing cursor */
+}
+
+.header {
+  animation: typing-header 2s steps(40, end), blink 0.7s step-end infinite;
+}
+
+#choose {
+  opacity: 0; /* Make #choose invisible initially */
+  animation: fadeIn 0s 2s forwards, typing-choose 2s steps(40, end) 2s forwards,
+    blink 0.7s step-end infinite 2s;
+}
+
+/* Typing animation for header */
+@keyframes typing-header {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Typing animation for choose */
+@keyframes typing-choose {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #ffebd2;
+  }
+}
+
+/* Fade-in animation for #choose */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: sans-serif, "Times New Roman", Times, serif;
+  text-align: center;
+  padding-top: 50px;
+  background-color: black;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margin */
+  overflow: hidden; /* Disables scrolling */
+}
+
+button {
+  /* margin: auto; */
+  margin-top: 30px;
+  padding: 100px 100px;
+  font-size: 60px; /* Increase the font size */
+  color: #ffebd2;
+  border: none; /* No border */
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.614);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth scaling and color transition */
+}
+.button-1 {
+  margin-left: -120px; /* Move Button 1 to the left */
+  margin-right: -50px;
+  background-color: hsl(0, 83%, 21%);
+}
+
+.button-2 {
+  margin-left: 300px; /* Move Button 2 to the left */
+  margin-right: -50px;
+  background-color: hsl(0, 83%, 21%);
+}
+
+.button-3 {
+  margin-left: 300px; /* Move Button 3 to the left */
+  background-color: hsl(0, 83%, 21%);
+}
+
+button:hover {
+  background-color: #ff9292; /* Deeper pink */
+  transform: scale(1.1); /* Grows the button by 10% */
+}

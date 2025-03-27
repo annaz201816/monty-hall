@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monty Hall Game</title>
+    <link
+      href="{{ url_for('static', filename='/styles/style.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="border">
+      <h1 class="header">Welcome to the Monty Hall Game!</h1>
+
+      <!-- <img
+        class="goat"
+        src="{{ url_for('static', filename='styles/goat1.gif') }}"
+        alt="goat_gif"
+      /> -->
+
+      <div class="hero_text">
+        <form action="/play" method="post">
+          <p id="choose">Choose a door (at your own risk)</p>
+          <button class="button-1" type="submit" name="door" value="1">
+            1
+          </button>
+          <button class="button-2" type="submit" name="door" value="2">
+            2
+          </button>
+          <button class="button-3" type="submit" name="door" value="3">
+            3
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

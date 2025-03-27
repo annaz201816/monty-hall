@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monty Hall - Result</title>
+    <link
+      href="{{ url_for('static', filename='styles/result.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- <img
+        class="goat"
+        src="{{ url_for('static', filename='styles/goat1.gif') }}"
+        alt="goat_gif"
+      /> -->
+
+      <div class="result">
+        <h1>Result</h1>
+        {% if win %}
+        <p>
+          Congratulations! You won the prize by {{ 'switching' if change else
+          'not switching' }}!
+        </p>
+        {% else %}
+        <p>
+          Sorry, you lost by {{ 'switching' if change else 'not switching' }}.
+        </p>
+        {% endif %}
+        <p>
+          Simulation results based on {{ 'switching' if change else 'not
+          switching' }}:
+        </p>
+        <p>Win Percentage: {{ results['win'] }}%</p>
+        <p>Lose Percentage: {{ results['lose'] }}%</p>
+        <a href="/">Play Again</a>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch</title>
+    <link
+      href="{{ url_for('static', filename='styles/switch.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <h1 class="header">Do you want to switch your door?</h1>
+      <div class="text1">
+        Hmm... interesting choice. You chose door {{ initial_choice }}
+      </div>
+      <div class="text2">
+        Since I pity you, I'll give you a hint. Door {{ removed_door }} has no
+        prize. Make your decision wisely...
+      </div>
+
+      <div class="guard">
+        <a
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          target="_blank"
+          title="Don't even think about clicking me"
+        >
+          <img
+            class="guard"
+            src="{{ url_for('static', filename='styles/guard.png') }}"
+            alt="guard"
+          />
+        </a>
+      </div>
+      <form action="/result" method="post">
+        <button
+          class="button-1"
+          type="submit"
+          name="door"
+          value="{{ remaining_door }}"
+        >
+          Switch to {{ remaining_door }}
+        </button>
+        <button
+          class="button-2"
+          type="submit"
+          name="door"
+          value="{{ initial_choice }}"
+        >
+          Keep {{ initial_choice }}
+        </button>
+      </form>
+    </main>
+  </body>
+</html>

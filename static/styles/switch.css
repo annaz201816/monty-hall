@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .border {
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.614);
+} */
+
+main {
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  background-color: lavenderblush;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("/static/styles/squid_games.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex; /* Enable Flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  text-align: center;
+}
+
+.header {
+  font-size: 3rem; /* Increase the font size */
+  color: #ffebd2;
+  margin-top: -30px;
+  margin-bottom: 50px; /* Add space below the header */
+  text-shadow: black 2px 2px 7px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Typing effect for text1 and text2 */
+.text1,
+.text2 {
+  font-size: 1.5rem; /* Adjust text size */
+  color: #ffebd2;
+  text-shadow: black 2px 2px 7px;
+  margin-bottom: 40px; /* Add space below the text */
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent text wrapping */
+  border-right: 2px solid #ffebd2; /* Simulate a typing cursor */
+}
+
+.text1 {
+  animation: typing 4s steps(40, end), blink 0.7s step-end infinite;
+}
+
+.text2 {
+  opacity: 0; /* Make text2 invisible initially */
+  animation: fadeIn 0s 3s forwards, typing 3s steps(40, end) 3s forwards,
+    blink 0.7s step-end infinite 3s;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #ffebd2;
+  }
+}
+
+/* Fade-in animation for text2 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex; /* Enable Flexbox for buttons */
+  gap: 20px; /* Add equal spacing between buttons */
+  justify-content: center; /* Center the buttons */
+}
+
+button {
+  padding: 60px 60px; /* Adjust button size */
+  font-size: 1.5rem; /* Adjust font size */
+  color: #ffebd2;
+  border: none; /* No border */
+  border-radius: 50%; /* Make buttons circular */
+  border: 2px solid rgba(0, 0, 0, 0.614);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth scaling and color transition */
+}
+
+.button-1 {
+  background-color: hsl(0, 83%, 21%);
+}
+
+.button-2 {
+  background-color: hsl(0, 83%, 21%);
+}
+
+button:hover {
+  background-color: #ff9292; /* Deeper pink */
+  transform: scale(1.1); /* Grows the button by 10% */
+}
+
+.guard {
+  width: 550px;
+  position: fixed; /* Keeps it fixed relative to the viewport */
+  bottom: 0; /* Aligns it to the bottom of the viewport */
+  left: 0; /* Aligns it to the left of the viewport */
+  z-index: 1000; /* Ensures it is above other content */
+  transition: transform 0.2s ease, filter 0.2s ease; /* Smooth scaling and brightness transition */
+  display: inline-block;
+}
+
+.guard::after {
+  content: attr(data-tooltip); /* Use the value of the data-tooltip attribute */
+  position: absolute;
+  bottom: 100%; /* Position above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for the tooltip */
+  color: #fff; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.guard:hover::after {
+  opacity: 1; /* Show the tooltip on hover */
+  visibility: visible; /* Make it visible */
+}
+
+.guard:hover {
+  transform: scale(1.1); /* Grows the image by 10% */
+  filter: brightness(100%); /* Restores full brightness on hover */
+}
