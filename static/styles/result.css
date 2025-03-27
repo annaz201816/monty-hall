@@ -26,29 +26,79 @@ main {
   text-align: center;
 }
 
-@keyframes slide {
+.header {
+  font-size: 3rem; /* Increase the font size */
+  color: #ffebd2;
+  margin-top: -30px;
+  margin-bottom: 50px; /* Add space below the header */
+  text-shadow: black 2px 2px 7px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.text1,
+.text2,
+.text3 {
+  font-size: 1.5rem; /* Adjust text size */
+  color: #ffebd2;
+  text-shadow: black 2px 2px 7px;
+  margin-bottom: 40px; /* Add space below the text */
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+}
+
+/* Typing effect for text1 */
+.text1 {
+  font-size: larger;
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent text wrapping */
+  border-right: 2px solid #ffebd2; /* Simulate a typing cursor */
+}
+
+.text1 {
+  animation: typing 2s steps(40, end), blink 0.7s step-end infinite;
+}
+
+/* .text2 {
+  opacity: 0; 
+  animation: fadeIn 0s 3s forwards, typing 3s steps(40, end) 3s forwards,
+    blink 0.7s step-end infinite 3s;
+}
+
+.text3 {
+  opacity: 0; 
+  animation: fadeIn 0s 3s forwards, typing 3s steps(40, end) 3s forwards,
+    blink 0.7s step-end infinite 3s;
+} */
+
+/* Typing animation */
+@keyframes typing {
   from {
-    transform: translateX(
-      0
-    ); /* Starts at the right edge, aligned with the edge of the screen */
+    width: 0;
   }
   to {
-    transform: translateX(
-      -100vw
-    ); /* Moves by the entire viewport width to the left */
+    width: 100%;
   }
 }
 
-.goat {
-  width: 240px;
-  position: fixed;
-  bottom: 0; /* Keeps it at the bottom */
-  right: 0; /* Start from the right edge of the screen */
-  animation: slide 10s linear infinite; /* Continuous loop, adjust duration as needed */
-  z-index: 1000; /* Ensures it is above other content */
-  filter: brightness(60%); /* Reduces brightness to 50% */
+/* Blinking cursor animation */
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #ffebd2;
+  }
 }
 
+/* Fade-in animation for text2 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 body {
   font-family: sans-serif, "Times New Roman", Times, serif;
   text-align: center;
@@ -61,6 +111,15 @@ body {
   align-items: center;
   height: 100vh; /* Full viewport height */
   margin: 0; /* Remove default margin */
+  overflow: hidden; /* Disables scrolling */
+}
+
+.text {
+  font-size: 2.5rem;
+  color: hsl(0, 100%, 97%);
+  text-shadow: black 2px 2px 2px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 button {
@@ -89,4 +148,71 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+.guard {
+  width: 500px;
+  position: fixed; /* Fixes the element relative to the viewport */
+  bottom: 0; /* Aligns it to the bottom */
+  left: -10; /* Aligns it to the left */
+  /* transform: scale(1); Default scale */
+  filter: brightness(80%); /* Optional: slightly dimmed by default */
+  transition: transform 0.2s ease, filter 0.2s ease; /* Smooth scaling and brightness transition */
+  display: inline-block;
+  margin: 0; /* Ensure no extra margin pushes it away */
+  padding: 0; /* Remove any padding */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.guard::after {
+  content: attr(data-tooltip); /* Use the value of the data-tooltip attribute */
+  position: absolute;
+  bottom: 100%; /* Position above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for the tooltip */
+  color: #fff; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.guard:hover::after {
+  opacity: 1; /* Show the tooltip on hover */
+  visibility: visible; /* Make it visible */
+}
+
+.guard:hover {
+  transform: scale(1.1); /* Grows the image by 10% */
+  filter: brightness(100%); /* Restores full brightness on hover */
+}
+
+button {
+  padding: 10px 10px; /* Adjust button size */
+  font-size: 1.5rem; /* Adjust font size */
+  color: #ffebd2;
+  border: none; /* No border */
+  border-radius: 50%; /* Make buttons circular */
+  border: 2px solid rgba(0, 0, 0, 0.614);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Smooth scaling and color transition */
+  background-color: hsl(0, 83%, 21%);
+}
+
+button:hover {
+  background-color: #ff9292; /* Deeper pink */
+  transform: scale(1.1); /* Grows the button by 10% */
+}
+
+.play-again-link {
+  color: #ffebd2;
+  text-decoration: none; /* Removes the underline */
+}
+
+.play-again-link:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
 }

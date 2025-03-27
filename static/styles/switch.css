@@ -54,7 +54,7 @@ main {
 }
 
 .text1 {
-  animation: typing 4s steps(40, end), blink 0.7s step-end infinite;
+  animation: typing 3s steps(40, end), blink 0.7s step-end infinite;
 }
 
 .text2 {

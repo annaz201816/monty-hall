@@ -73,7 +73,7 @@ main {
 }
 
 .header {
-  animation: typing-header 2s steps(40, end), blink 0.7s step-end infinite;
+  animation: typing-header 3s steps(40, end), blink 0.7s step-end infinite;
 }
 
 #choose {

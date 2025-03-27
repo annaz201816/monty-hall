@@ -18,24 +18,51 @@
       /> -->
 
       <div class="result">
-        <h1>Result</h1>
-        {% if win %}
-        <p>
-          Congratulations! You won the prize by {{ 'switching' if change else
-          'not switching' }}!
-        </p>
-        {% else %}
-        <p>
-          Sorry, you lost by {{ 'switching' if change else 'not switching' }}.
-        </p>
-        {% endif %}
-        <p>
-          Simulation results based on {{ 'switching' if change else 'not
-          switching' }}:
-        </p>
-        <p>Win Percentage: {{ results['win'] }}%</p>
-        <p>Lose Percentage: {{ results['lose'] }}%</p>
-        <a href="/">Play Again</a>
+        <h1 class="header">Result</h1>
+
+        <div class="text1">
+          {% if win %}
+          <p>
+            You got lucky this time: You won the prize by {{ 'switching' if
+            change else 'not switching' }}
+          </p>
+          {% else %}
+          <p>
+            As predicted, not very intuitive: you lost by {{ 'switching' if
+            change else 'not switching' }}.
+          </p>
+          {% endif %}
+        </div>
+        <div class="text2">
+          <p>
+            Simulation results based on {{ 'switching' if change else 'not
+            switching' }}:
+          </p>
+        </div>
+
+        <div class="text3">
+          <p>Win Percentage: {{ results['win'] }}%</p>
+          <p>Lose Percentage: {{ results['lose'] }}%</p>
+          <!-- <a href="/">Play Again</a> -->
+        </div>
+
+        <button class="button" type="submit" name="door">
+          <a href="/" class="play-again-link">Play Again</a>
+        </button>
+
+        <div class="guard">
+          <a
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            target="_blank"
+            title="Don't even think about clicking me"
+          >
+            <img
+              class="guard"
+              src="{{ url_for('static', filename='styles/guard.png') }}"
+              alt="guard"
+            />
+          </a>
+        </div>
       </div>
     </main>
   </body>
