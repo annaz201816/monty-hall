@@ -151,12 +151,12 @@ button {
 }
 
 .guard {
-  width: 500px;
+  width: 450px;
   position: fixed; /* Fixes the element relative to the viewport */
   bottom: 0; /* Aligns it to the bottom */
   left: -10; /* Aligns it to the left */
   /* transform: scale(1); Default scale */
-  filter: brightness(80%); /* Optional: slightly dimmed by default */
+  filter: brightness(90%); /* Optional: slightly dimmed by default */
   transition: transform 0.2s ease, filter 0.2s ease; /* Smooth scaling and brightness transition */
   display: inline-block;
   margin: 0; /* Ensure no extra margin pushes it away */

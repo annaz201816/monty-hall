@@ -124,13 +124,14 @@ button:hover {
 }
 
 .guard {
-  width: 550px;
+  width: 450px;
   position: fixed; /* Keeps it fixed relative to the viewport */
   bottom: 0; /* Aligns it to the bottom of the viewport */
   left: 0; /* Aligns it to the left of the viewport */
   z-index: 1000; /* Ensures it is above other content */
   transition: transform 0.2s ease, filter 0.2s ease; /* Smooth scaling and brightness transition */
   display: inline-block;
+  filter: brightness(90%);
 }
 
 .guard::after {
